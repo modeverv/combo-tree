@@ -1,13 +1,13 @@
 /*!
  * jQuery ComboTree Plugin
  * Author:  Erhan FIRAT
+ * Modified: modeverv
  * Mail:    erhanfirat@gmail.com
  * Licensed under the MIT license
- * Version: 1.2.1
+ * Version: 1.2.1 + modify
  */
 
-
-;(function ( $, window, document, undefined ) {
+(function ($, window, document, undefined) {
   // Default settings
   var comboTreePlugin = 'comboTree',
     defaults = {
@@ -351,7 +351,7 @@
     });
 
     // modify
-    $("#" + _this.comboTreeId).on('click', function (e) {
+    $('#' + _this.comboTreeId + 'SelectAll').on('click', function (e) {
       e.stopPropagation();
       checked = $(e.target).prop('checked');
       if (checked) {
@@ -360,7 +360,6 @@
         _this.clearSelection();
       }
     });
-
   };
 
   // EVENTS HERE
@@ -385,9 +384,8 @@
       if ($(subMenu).is(':visible'))
         $(item)
           .children('span.comboTreeParentPlus')
-          .html(
-            '<span class="mdi mdi-chevron-right-circle-outline"></span>'
-          ); //$(item).children('span.comboTreeParentPlus').html("+");
+          .html('<span class="mdi mdi-chevron-right-circle-outline"></span>');
+      //$(item).children('span.comboTreeParentPlus').html("+");
       else
         $(item)
           .children('span.comboTreeParentPlus')
@@ -751,9 +749,7 @@
     $('#' + this.comboTreeId + 'ComboTreeSourceUlmain')
       .find("input[type='checkbox']")
       .each(function (idx, elem) {
-        console.log(elem);
         var $itemElem = $(elem).parent('span').first();
-        console.log($itemElem);
         var item = {
           id: $itemElem.data('id'),
           title: $itemElem.text(),
@@ -778,4 +774,4 @@
     if (this.length == 1) return ctArr[0];
     else return ctArr;
   };
-})( jQuery, window, document );
+})(jQuery, window, document);
