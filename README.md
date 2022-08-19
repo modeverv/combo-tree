@@ -1,3 +1,5 @@
+## modify
+implements a selectAll methos
 
 ## 1.2.1 Updates
 - Filter is fixed & updated.
